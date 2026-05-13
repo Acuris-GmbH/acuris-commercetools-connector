@@ -12,6 +12,19 @@ import { iso3ToIso2 } from "./iso.js";
 import type { BaseAddress, SuggestionHit } from "./types.js";
 
 /**
+ * Strip leading zeros from a house-number string. Acuris's /suggest
+ * endpoint returns house numbers padded with leading zeros for some
+ * countries (DEU stores "0001" instead of "1" for sortability in the
+ * reference DB). /validate normalizes them; /suggest doesn't.
+ * Examples: "0001" → "1", "0042B" → "42B", "0" → "0", "10" → "10".
+ */
+export function normalizeHouseNumber(hno?: string): string | undefined {
+  if (!hno) return hno;
+  const stripped = hno.replace(/^0+(?=[0-9])/, "");
+  return stripped || hno;
+}
+
+/**
  * commercetools BaseAddress → Acuris fielded input.
  *
  *   { country: "DE", streetName: "Hammanstr.", streetNumber: "1",
@@ -27,7 +40,7 @@ import type { BaseAddress, SuggestionHit } from "./types.js";
 export function toAcurisInput(addr: BaseAddress): FieldedAddressInput {
   return {
     street: addr.streetName,
-    house_number: addr.streetNumber,
+    house_number: normalizeHouseNumber(addr.streetNumber),
     locality: addr.additionalStreetInfo,
     city: addr.city,
     state: addr.region ?? addr.state,
@@ -53,7 +66,7 @@ export function toBaseAddress(
   return {
     country: iso3ToIso2(country),
     streetName: s?.street ?? base.streetName,
-    streetNumber: s?.house_number ?? base.streetNumber,
+    streetNumber: normalizeHouseNumber(s?.house_number ?? base.streetNumber),
     additionalStreetInfo: base.additionalStreetInfo,
     building: base.building,
     apartment: base.apartment,
@@ -91,7 +104,7 @@ export function suggestionToBaseAddress(
   return {
     country: iso3ToIso2(hit.country ?? base.country ?? ""),
     streetName: hit.street ?? base.streetName,
-    streetNumber: hit.house_number ?? base.streetNumber,
+    streetNumber: normalizeHouseNumber(hit.house_number ?? base.streetNumber),
     additionalStreetInfo: base.additionalStreetInfo,
     building: base.building,
     apartment: base.apartment,

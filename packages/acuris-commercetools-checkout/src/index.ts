@@ -22,6 +22,7 @@ export {
   toAcurisInput,
   toBaseAddress,
   suggestionToBaseAddress,
+  normalizeHouseNumber,
 } from "./boundary.js";
 
 export { iso2ToIso3, iso3ToIso2 } from "./iso.js";
