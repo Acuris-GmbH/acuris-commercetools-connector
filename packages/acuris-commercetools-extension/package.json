@@ -1,0 +1,62 @@
+{
+  "name": "@acuris-geo/commercetools-extension",
+  "version": "0.1.0",
+  "description": "commercetools API Extension handler for Acuris Address Validation & Geocoding — gates Cart updates server-side.",
+  "keywords": [
+    "acuris",
+    "commercetools",
+    "api-extension",
+    "address-validation",
+    "geocoding",
+    "composable-commerce",
+    "connect"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node ./build-cjs.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --coverage",
+    "test:watch": "vitest"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "license": "MIT",
+  "author": "Acuris GmbH <engineering@acuris-geo.com>",
+  "homepage": "https://github.com/Acuris-GmbH/acuris-commercetools-connector/tree/main/packages/acuris-commercetools-extension#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Acuris-GmbH/acuris-commercetools-connector.git",
+    "directory": "packages/acuris-commercetools-extension"
+  },
+  "bugs": {
+    "url": "https://github.com/Acuris-GmbH/acuris-commercetools-connector/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@acuris-geo/av-sdk": "^0.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@vitest/coverage-v8": "^2.1.4",
+    "typescript": "^5.5.4",
+    "vitest": "^2.1.4"
+  }
+}

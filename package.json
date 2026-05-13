@@ -1,0 +1,32 @@
+{
+  "name": "acuris-commercetools-connector",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Acuris Address Validation & Geocoding integration for commercetools — React widgets + server-side API Extension handler.",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "clean": "rm -rf packages/*/dist examples/*/.next"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Acuris-GmbH/acuris-commercetools-connector.git"
+  },
+  "homepage": "https://acuris-geo.com",
+  "bugs": {
+    "url": "https://github.com/Acuris-GmbH/acuris-commercetools-connector/issues"
+  }
+}
