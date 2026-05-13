@@ -1,0 +1,75 @@
+{
+  "name": "@acuris-geo/commercetools-checkout",
+  "version": "0.1.0",
+  "description": "React components for integrating Acuris Address Validation & Geocoding into commercetools storefronts.",
+  "keywords": [
+    "acuris",
+    "commercetools",
+    "headless-commerce",
+    "address-validation",
+    "geocoding",
+    "react",
+    "checkout",
+    "alokai",
+    "composable-commerce"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node ./build-cjs.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --coverage",
+    "test:watch": "vitest"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "license": "MIT",
+  "author": "Acuris GmbH <engineering@acuris-geo.com>",
+  "homepage": "https://github.com/Acuris-GmbH/acuris-commercetools-connector/tree/main/packages/acuris-commercetools-checkout#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Acuris-GmbH/acuris-commercetools-connector.git",
+    "directory": "packages/acuris-commercetools-checkout"
+  },
+  "bugs": {
+    "url": "https://github.com/Acuris-GmbH/acuris-commercetools-connector/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "@acuris-geo/av-sdk": "^0.1.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/react": "^16.0.0",
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitest/coverage-v8": "^2.1.4",
+    "jsdom": "^25.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.5.4",
+    "vitest": "^2.1.4"
+  }
+}

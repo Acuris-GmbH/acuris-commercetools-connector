@@ -1,0 +1,114 @@
+:root {
+  --acuris-fg: #111;
+  --acuris-bg: #fff;
+  --acuris-muted: #888;
+  --acuris-accent: #1d4ed8;
+  --acuris-border: #d4d4d4;
+  --acuris-radius: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--acuris-fg);
+  background: var(--acuris-bg);
+  line-height: 1.5;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin: 0 0 0.5rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 1.75rem 0 0.5rem;
+}
+
+p {
+  margin: 0.25rem 0 0.75rem;
+  color: #333;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 0.75rem;
+  color: #444;
+}
+
+input, select {
+  width: 100%;
+  font: inherit;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--acuris-border);
+  border-radius: var(--acuris-radius);
+  background: #fff;
+}
+
+input:focus, select:focus {
+  outline: 2px solid var(--acuris-accent);
+  outline-offset: -1px;
+  border-color: transparent;
+}
+
+button {
+  font: inherit;
+  padding: 0.55rem 1.1rem;
+  border: 0;
+  border-radius: var(--acuris-radius);
+  background: var(--acuris-accent);
+  color: #fff;
+  cursor: pointer;
+  margin-top: 1.25rem;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+a {
+  color: var(--acuris-accent);
+}
+
+[data-acuris-suggestions] {
+  border: 1px solid var(--acuris-border);
+  border-radius: var(--acuris-radius);
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  margin-top: 4px !important;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+[data-acuris-suggestions] li {
+  padding: 0.55rem 0.7rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  white-space: pre-line;
+}
+
+[data-acuris-suggestions] li[aria-selected="true"] {
+  background: #eef2ff;
+}
+
+.acuris-status {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.acuris-status[data-state="ok"]      { color: #047857; }
+.acuris-status[data-state="error"]   { color: #b91c1c; }
+.acuris-status[data-state="loading"] { color: var(--acuris-muted); }
