@@ -24,11 +24,14 @@ jobs:
       - name: Install
         run: npm ci
 
-      - name: Typecheck
-        run: npm run typecheck
-
+      # Build first — the example workspace resolves
+      # `@acuris-geo/commercetools-{checkout,extension}` types from
+      # `dist/index.d.ts`, which doesn't exist until the packages have built.
       - name: Build
         run: npm run build
+
+      - name: Typecheck
+        run: npm run typecheck
 
       - name: Test
         run: npm test
