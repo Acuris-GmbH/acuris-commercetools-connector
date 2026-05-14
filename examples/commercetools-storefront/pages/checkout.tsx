@@ -20,6 +20,7 @@ const COUNTRIES = [
   { code: "DE", label: "Germany" },
   { code: "NL", label: "Netherlands" },
   { code: "FI", label: "Finland" },
+  { code: "SE", label: "Sweden" },
 ];
 
 // Country-specific placeholder examples. Each is verified to return a
@@ -29,6 +30,7 @@ const EXAMPLE_ADDRESS: Record<string, string> = {
   DE: "Marienplatz 8, 80331 München",
   NL: "Stadhouderskade 78, 1072 AE Amsterdam",
   FI: "Mannerheimintie 1, 00100 Helsinki",
+  SE: "Drottninggatan 1, 11151 Stockholm",
 };
 
 export default function Checkout() {
