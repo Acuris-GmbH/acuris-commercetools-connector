@@ -19,6 +19,7 @@ const COUNTRIES = [
   { code: "US", label: "United States" },
   { code: "DE", label: "Germany" },
   { code: "NL", label: "Netherlands" },
+  { code: "FI", label: "Finland" },
 ];
 
 export default function Checkout() {
