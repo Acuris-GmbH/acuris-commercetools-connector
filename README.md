@@ -43,6 +43,38 @@ that surface.
 
 ---
 
+## Use with AI coding agents
+
+If you build with Claude Code, Cursor, GitHub Copilot, OpenCode, Codex,
+Gemini CLI, or any other tool that supports
+[Agent Skills](https://agentskills.io), install the Acuris agent
+context. It bundles two skills:
+
+- **`acuris-address`** — wires Acuris AV/Geo/RevGeo/autocomplete into
+  your project. Knows the SDK shape, the right headers, the typed
+  error hierarchy, and the commercetools-specific patterns (the
+  storefront widget + the API Extension handler that gates cart
+  updates server-side). Includes migration recipes from
+  libAddressDoctor (Informatica), Loqate, Experian QAS, Melissa, and
+  Smarty.
+- **`acuris-eudi`** — wires the Acuris EUDI Wallet Verifier
+  (OID4VP / SD-JWT VC at `eudi.acuris-geo.com`) into a bank KYC flow.
+
+Each skill auto-activates only when your task matches.
+
+```bash
+# Claude Code (self-hosted marketplace today; official listing pending review):
+/plugin marketplace add Acuris-GmbH/acuris-agent-context
+/plugin install acuris@acuris-plugins
+
+# Cursor, Copilot, Codex, OpenCode, Gemini CLI, Kiro, Goose, others:
+npx skills add Acuris-GmbH/acuris-agent-context
+```
+
+Source: <https://github.com/Acuris-GmbH/acuris-agent-context> · Docs: <https://acuris-gmbh.github.io/acuris-agent-context/>
+
+---
+
 ## Why two packages?
 
 Storefront-only address validation is a **bypass**: a buyer with the
