@@ -17,6 +17,7 @@ const ENDPOINTS = {
 // commercetools convention: ISO-3166-1 alpha-2, uppercase.
 const COUNTRIES = [
   { code: "US", label: "United States" },
+  { code: "GB", label: "United Kingdom" },
   { code: "DE", label: "Germany" },
   { code: "NL", label: "Netherlands" },
   { code: "FI", label: "Finland" },
@@ -27,6 +28,7 @@ const COUNTRIES = [
 // rooftop match from the production ref DB.
 const EXAMPLE_ADDRESS: Record<string, string> = {
   US: "1600 Pennsylvania Ave NW, Washington, DC 20500",
+  GB: "10 Downing Street, London SW1A 2AA",
   DE: "Marienplatz 8, 80331 München",
   NL: "Stadhouderskade 78, 1072 AE Amsterdam",
   FI: "Mannerheimintie 1, 00100 Helsinki",
