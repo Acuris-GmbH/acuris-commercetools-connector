@@ -11,7 +11,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@acuris-geo/av-sdk": "^0.1.1",
+    "@acuris-geo/av-sdk": "^0.1.2",
     "@acuris-geo/commercetools-checkout": "^0.1.1",
     "@acuris-geo/commercetools-extension": "^0.1.0",
     "next": "^14.2.5",

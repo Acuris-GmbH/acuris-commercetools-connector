@@ -1,7 +1,7 @@
 {
   "name": "@acuris-geo/commercetools-extension",
-  "version": "0.1.0",
-  "description": "commercetools API Extension handler for Acuris Address Validation & Geocoding — gates Cart updates server-side.",
+  "version": "0.1.1",
+  "description": "commercetools API Extension handler for Acuris Address Validation & Geocoding \u2014 gates Cart updates server-side.",
   "keywords": [
     "acuris",
     "commercetools",
@@ -51,7 +51,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@acuris-geo/av-sdk": "^0.1.1"
+    "@acuris-geo/av-sdk": "^0.3.0"
   },
   "devDependencies": {
     "@types/node": "^20.14.10",
