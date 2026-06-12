@@ -1,6 +1,6 @@
 {
   "name": "@acuris-geo/commercetools-checkout",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React components for integrating Acuris Address Validation & Geocoding into commercetools storefronts.",
   "keywords": [
     "acuris",
@@ -57,7 +57,7 @@
     "react-dom": "^18.0.0 || ^19.0.0"
   },
   "dependencies": {
-    "@acuris-geo/av-sdk": "^0.1.1"
+    "@acuris-geo/av-sdk": "^0.3.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.8",
